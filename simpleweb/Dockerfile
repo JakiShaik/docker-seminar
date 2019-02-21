@@ -3,9 +3,10 @@
 #Install some dependencies
 FROM node:alpine
 
+# We have to specify a work directory. All our files/folders in local system will be located in this directory of the container. 
 WORKDIR /usr/app
 
-#The container file system will not have the package.json, Hence we have to copy that by using following command.
+#The container file system will not have the package.json/the code that we have on our local system. Hence we have to copy that by using following command. 
 COPY ./package.json ./
 RUN npm install
 COPY ./ ./
